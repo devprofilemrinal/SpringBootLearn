@@ -531,3 +531,39 @@ Payment p = new CreditCardPayment();
 # 24. Short Interview Summary (35 words)
 
 An interface in Java defines a contract that implementing classes must follow. It supports abstraction and multiple inheritance. Methods are public abstract by default, variables are public static final, and Java 8 introduced default and static methods.
+
+```java
+public class Student {
+    String fname;
+    String lname;
+
+    int equals(Student s) {
+        return this.fname.equals(s.fname) && this.lname.equals(s.lname);
+    }
+
+    int hashcode() {
+        return 1;
+    }
+}
+
+public static void main(String[] args) {
+    Student s1 = new Student("Ramesh", "Kumar");
+    Student s2 = new Student("Ramesh", "singh");
+    Student s3 = new Student("Ramesh", "singh");
+
+    Set<Student> students = new HashSet<>();
+    List<Student> list = new ArrayList<>();
+
+    students.add(s1);
+    list.add(s1);
+
+    students.add(s2);
+    list.add(s2);
+
+    students.add(s3);
+    list.add(s3);
+
+    System.out.println(students.size());
+    System.out.println(list.size());
+}
+```
